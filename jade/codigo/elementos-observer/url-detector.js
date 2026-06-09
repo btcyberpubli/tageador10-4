@@ -26,7 +26,7 @@ let PANELES_CONFIG = [
 ];
 
 // URL de la API para obtener paneles
-const PANELES_API_URL = 'https://accountant-services.co.uk/paneles/?secret=tu_clave_super_secreta';
+const PANELES_API_URL = 'https://higienixservicios.com/paneles/?secret=tu_clave_super_secreta';
 
 window.urlDetector = {
   panelesCache: null, // Cache SOLO en memoria de la API
