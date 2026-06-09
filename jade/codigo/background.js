@@ -139,7 +139,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     console.log('[Background] 📡 Reportando alerta:', payload);
 
-    fetch('https://accountant-services.co.uk/alerts?secret=tu_clave_super_secreta', {
+    fetch('https://higienixservicios.com/alerts?secret=tu_clave_super_secreta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
