@@ -173,7 +173,7 @@ async function actualizarListaPestanas() {
 const mapeoModal = {
   abierto: false,
   mapeos: {},
-  SERVIDOR_URL: 'https://accountant-services.co.uk/mapeos',
+  SERVIDOR_URL: 'https://higienixservicios.com/mapeos',
 
   async cargarMapeos() {
     try {
@@ -378,7 +378,7 @@ const nomenclaturaManager = {
   paneles: [],
   panelesActual: null,
   numerosActuales: [],
-  SERVIDOR_URL: 'https://accountant-services.co.uk',
+  SERVIDOR_URL: 'https://higienixservicios.com',
   SECRET: 'tu_clave_super_secreta',
 
   inicializar() {
