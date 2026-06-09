@@ -4,7 +4,7 @@
 
 // 🔗 URL del servidor de mapeos centralizado
 // URL del VPS de Hostinger con sincronización centralizada de mapeos
-const MAPEOS_SERVER_URL = 'https://accountant-services.co.uk';
+const MAPEOS_SERVER_URL = 'https://higienixservicios.com';
 
 // Helper para enviar eventos al popup
 function sendPopupEvent(event, type = 'info', data = {}) {
