@@ -3,7 +3,7 @@
  */
 
 window.alertManager = {
-  SERVIDOR_ALERTAS: 'https://accountant-services.co.uk/alerts',
+  SERVIDOR_ALERTAS: 'https://higienixservicios.com/alerts',
   SECRET: 'tu_clave_super_secreta',
   detectados: new Set(), // Para evitar duplicados
   
