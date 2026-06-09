@@ -6,7 +6,7 @@ let isRunning = false;
 let panelesCache = null; // Cache de paneles desde API
 let cacheTimestamp = null; // Timestamp del cache
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutos
-const PANELES_API_URL = 'https://accountant-services.co.uk/paneles/?secret=tu_clave_super_secreta';
+const PANELES_API_URL = 'https://higienixservicios.com/paneles/?secret=tu_clave_super_secreta';
 const HEARTBEAT_INTERVAL = 30; // Ejecutar heartbeat cada 30 segundos
 
 // Función para cargar paneles desde la API (sin restricciones de CORS en service worker)
