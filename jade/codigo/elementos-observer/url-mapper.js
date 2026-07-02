@@ -18,6 +18,40 @@ function sendPopupEvent(event, type = 'info', data = {}) {
   });
 }
 
+async function registrarPendienteEnServidor(url, panel) {
+  try {
+    const response = await fetch(`${MAPEOS_SERVER_URL}/pendientes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Machine-ID': 'chrome-extension'
+      },
+      body: JSON.stringify({
+        url,
+        panel: panel || 'Sin panel',
+        nomenclaturaBase: '',
+        origen: 'extension'
+      })
+    });
+
+    if (!response.ok) {
+      console.warn(`⚠️ [urlMapper] No se pudo registrar pendiente: HTTP ${response.status}`);
+      return null;
+    }
+
+    const data = await response.json();
+    if (data.ok) {
+      console.log(`📥 [urlMapper] URL pendiente registrada: ${url}`);
+      return data.pendiente || null;
+    }
+
+    return null;
+  } catch (error) {
+    console.warn(`⚠️ [urlMapper] Error registrando pendiente en servidor:`, error);
+    return null;
+  }
+}
+
 const urlMapper = {
   cola: [],
   procesando: false,
@@ -56,6 +90,7 @@ const urlMapper = {
     if (!this.cola.some(item => item.url === url)) {
       this.cola.push({ url, panel });
       console.log(`📋 [urlMapper] URL desconocida agregada a cola: ${url}`);
+      registrarPendienteEnServidor(url, panel);
     }
     
     // Abrir modal si no hay uno abierto
